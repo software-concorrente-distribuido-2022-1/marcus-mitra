@@ -48,7 +48,7 @@ public class PrimeNumbersApplication {
         totalRunTime = durationPrime1 + durationPrime2;
 
         System.out.println("Each prime number found:");
-        primeNumbers.forEach(System.out::println);
+        System.out.println(primeNumbers.toString());
         System.out.println("End of the prime number's list");
 
         System.out.println("Prime numbers total: "+primeCount);
@@ -59,7 +59,11 @@ public class PrimeNumbersApplication {
 
         int indexFound;
         int targetPrime = 119999987;
+        long startTimeParallelSearch = System.nanoTime();
         indexFound = ParallelSearch.parallelSearch(targetPrime, primeNumbers, 5);
+        long endTimeParallelSearch = System.nanoTime();
+        long totalTimeParallelSearch = (endTimeParallelSearch - startTimeParallelSearch) / 1000000;
+        System.out.println("Parallel search runtime: "+totalTimeParallelSearch+"ms");
         if (indexFound == -1) {
             System.out.println("Prime number not found!");
         } else {
