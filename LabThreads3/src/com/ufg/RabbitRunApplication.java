@@ -3,7 +3,7 @@ package com.ufg;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RabbitRun {
+public class RabbitRunApplication {
 
     public static List<Rabbit> rabbitList = new ArrayList<>();
 
